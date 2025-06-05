@@ -18,7 +18,7 @@ export default function App() {
           <button
             key={cat.id}
             onClick={() => setCategory(cat.id)}
-            className={\`w-full py-2 px-4 rounded-2xl shadow \${category === cat.id ? "bg-blue-500 text-white" : "bg-gray-100 hover:bg-gray-200"}\`}
+            className={`w-full py-2 px-4 rounded-2xl shadow ${category === cat.id ? "bg-blue-500 text-white" : "bg-gray-100 hover:bg-gray-200"}`}
           >
             {cat.name}
           </button>
@@ -27,7 +27,10 @@ export default function App() {
 
       {category && (
         <div className="mt-6 text-center">
-          <p className="text-lg mb-4">Вы выбрали: <strong>{categories.find(c => c.id === category)?.name}</strong></p>
+          <p className="text-lg mb-4">
+            Вы выбрали:{" "}
+            <strong>{categories.find((c) => c.id === category)?.name}</strong>
+          </p>
           <button className="bg-green-500 hover:bg-green-600 text-white py-2 px-6 rounded-xl shadow">
             Сгенерировать
           </button>
